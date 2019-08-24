@@ -28,3 +28,16 @@ Sample Output:
 
 2
 */
+
+function birthdayCakeCandles(arr) {
+  let tallestCandleCount = 0;
+  let max = Math.max(...arr);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === max) {
+      tallestCandleCount += 1;
+    }
+  }
+  return tallestCandleCount;
+}
+
+console.log(birthdayCakeCandles([3, 2, 1, 3]));
