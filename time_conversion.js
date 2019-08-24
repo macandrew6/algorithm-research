@@ -19,11 +19,26 @@ Sample Output:
 
 function timeConversion(s) {
   let convertedTime = '';
-  if (s.slice(8) === 'PM') {
-
-  }
+  
   let timeArr = s.slice(0,8).split(':');
-  console.log(timeArr);
+  if (s.slice(8) === 'PM') {
+    if (timeArr[0] === '12') {
+      convertedTime = '12';
+    } else {
+      convertedTime += (parseInt(timeArr[0]) + 12).toString();
+    }
+  } else {
+    if (timeArr[0] === '12') {
+      convertedTime += '00';
+    } else {
+      convertedTime += timeArr[0];
+    }
+  }
+  for (let i = 1; i < timeArr.length; i++) {
+    convertedTime += `:${timeArr[i]}`;
+  }
+
+  return convertedTime;
 }
 
-console.log(timeConversion('07:05:45PM'));
+console.log(timeConversion('12:45:54PM'));
