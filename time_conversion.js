@@ -18,5 +18,12 @@ Sample Output:
 */
 
 function timeConversion(s) {
-  
+  let convertedTime = '';
+  if (s.slice(8) === 'PM') {
+
+  }
+  let timeArr = s.slice(0,8).split(':');
+  console.log(timeArr);
 }
+
+console.log(timeConversion('07:05:45PM'));
