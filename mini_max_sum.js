@@ -18,9 +18,19 @@ Sample Output:
 10 14
 */
 
-function miniMaxSum(input) {
-  
+function miniMaxSum(arr) {
+  let sumValues = [];
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for (let j = 0; j < arr.length; j++) {
+      if (i !== j) {
+        sum += arr[j];
+      }
+    }
+    sumValues.push(sum);
+  }
+  return [Math.min(...sumValues), Math.max(...sumValues)];
 }
 
-let input = [1, 2, 3, 4, 5];
-console.log(miniMaxSum(input));
+let arr = [1, 2, 3, 4, 5];
+console.log(miniMaxSum(arr));
