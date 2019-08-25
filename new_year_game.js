@@ -32,3 +32,7 @@ Sample Output:
 Balsa
 Koca
 */
+
+function newYearGame() {
+  
+}
