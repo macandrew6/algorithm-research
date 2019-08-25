@@ -33,6 +33,11 @@ Balsa
 Koca
 */
 
-function newYearGame() {
+function newYearGame(arr) {
+  // grab hold of a element in the array
+  // save the value to a placeholder
+  // remove that value from the array
+  // see if the value sum at the end of turns is divisible by 3 evenly
+  // determine winner
   
 }
