@@ -39,5 +39,20 @@ function newYearGame(arr) {
   // remove that value from the array
   // see if the value sum at the end of turns is divisible by 3 evenly
   // determine winner
-  
+  let BalsaScore = 0;
+  let KocaScore = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2 === 0) {
+      BalsaScore += arr[i];
+    } else {
+      KocaScore += arr[i];
+    }
+  }
+
+  if (Math.abs(BalsaScore - KocaScore) % 3 === 0) {
+    console.log('Koca');
+  } else {
+    console.log('Balsa');
+  }
 }
