@@ -37,10 +37,14 @@ function newYearGame(arr) {
   // grab hold of a element in the array
   // save the value to a placeholder
   // remove that value from the array
+  // remember to sort the array from largest values to smallest
   // see if the value sum at the end of turns is divisible by 3 evenly
   // determine winner
   let BalsaScore = 0;
   let KocaScore = 0;
+
+  let optimizedArr = arr.sort((a, b) => b - a);
+  console.log(optimizedArr);
 
   for (let i = 0; i < arr.length; i++) {
     if (i % 2 === 0) {
@@ -56,3 +60,7 @@ function newYearGame(arr) {
     console.log('Balsa');
   }
 }
+
+let arr = [1, 2, 2, 1, 3, 3, 3, 2, 3, 2];
+
+console.log(newYearGame(arr));
