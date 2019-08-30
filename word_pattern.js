@@ -26,24 +26,16 @@ lowercase letters that may be separated by a single space.
 */
 
 var wordPattern = function (pattern, str) {
-  var pArr = pattern.split("");
-  var sArr = str.split(" ");
-  if (pArr.length !== sArr.length) return false;
-  var mapP2S = {};
-  var mapS2P = {};
-  for (var i = 0; i < pArr.length; ++i) {
-    if (pArr[i] in mapP2S) {
-      if (sArr[i] !== mapP2S[pArr[i]]) return false;
-    }
-    else {
-      mapP2S[pArr[i]] = sArr[i];
-    }
-    if (sArr[i] in mapS2P) {
-      if (pArr[i] !== mapS2P[sArr[i]]) return false;
-    }
-    else {
-      mapS2P[sArr[i]] = pArr[i];
+  let strArr = str.split(' ');
+  if (pattern.length !== strArr.length) return false;
+
+  const hashMap = {};
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (hashMap[pattern[i]]) {
+      if (hashMap[pattern[i]] !== strArr[i]) return false;
+    } else {
+      
     }
   }
-  return true;
 };
