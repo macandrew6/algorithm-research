@@ -35,7 +35,9 @@ var wordPattern = function (pattern, str) {
     if (hashMap[pattern[i]]) {
       if (hashMap[pattern[i]] !== strArr[i]) return false;
     } else {
-      
+      if (Object.values(hashMap).indexOf(strArr[i]) !== -1) return false;
+      hashMap[pattern[i]] = strArr[i];
     }
   }
+  return true;
 };
