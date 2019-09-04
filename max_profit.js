@@ -25,15 +25,13 @@ Explanation: In this case, no transaction is done, i.e.max profit = 0.
 // failing test case: [2, 4, 1]
 
 function maxProfit(prices) {
-  // find the lowest value in the array
-  // save the index of the lowest value in the array
-  // slice the array from lowest index to the end of the array
-  // find the max value of the slice
-  // if array.slice.length === 1 return 0
-  let lowestValue = Math.min(...prices);
-  let lowestValueIdx = prices.indexOf(lowestValue);
-  let pricesSlice = prices.slice(lowestValueIdx);
-  if(pricesSlice.length === 1) return 0;
-  let maxValue = Math.max(...pricesSlice);
-  return maxValue - lowestValue;
+  // (1) Iterate through each number in the list
+  // (2) At the ith index, get the i + 1 index price and check if it is larger 
+  //     than the ith index price
+  // (3) If so, set buy_price = i and sell_price = i + 1. Then calculate the 
+  //     profit: sell_price - buy_price.
+  // (4) If a stock price is found that is cheaper than the current buy_price,
+  //     set this to be the new buying price and continue from step 2.
+  // (5) Otherwise, continue changing only the sell_price and keep buy_price 
+  //     set.
 }
