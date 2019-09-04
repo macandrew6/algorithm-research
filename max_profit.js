@@ -23,6 +23,10 @@ Explanation: In this case, no transaction is done, i.e.max profit = 0.
 */
 
 function maxProfit(prices) {
-  //
+  // find the lowest value in the array
+  // save the index of the lowest value in the array
+  // slice the array from lowest index to the end of the array
+  // find the max value of the slice
+  // if array.slice.length === 1 return 0
 
 }
