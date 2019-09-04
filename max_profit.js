@@ -28,5 +28,10 @@ function maxProfit(prices) {
   // slice the array from lowest index to the end of the array
   // find the max value of the slice
   // if array.slice.length === 1 return 0
-
+  let lowestValue = Math.min(...prices);
+  let lowestValueIdx = prices.indexOf(lowestValue);
+  let pricesSlice = prices.slice(lowestValueIdx);
+  if(pricesSlice.length === 1) return 0;
+  let maxValue = Math.max(...pricesSlice);
+  return maxValue - lowestValue;
 }
