@@ -22,6 +22,8 @@ Output: 0
 Explanation: In this case, no transaction is done, i.e.max profit = 0.
 */
 
+// failing test case: [2, 4, 1]
+
 function maxProfit(prices) {
   // find the lowest value in the array
   // save the index of the lowest value in the array
