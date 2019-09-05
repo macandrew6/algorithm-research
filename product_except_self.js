@@ -14,5 +14,11 @@ count as extra space for the purpose of space complexity analysis.)
 */
 
 function product_except_self(nums) {
-  
+  // iterate through an array
+  // init a variable products
+  // replace each current value with the products
+  // return nums
+  for (let i = 0; i < nums.length; i++) {
+    
+  }
 }
