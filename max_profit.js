@@ -34,4 +34,13 @@ function maxProfit(prices) {
   //     set this to be the new buying price and continue from step 2.
   // (5) Otherwise, continue changing only the sell_price and keep buy_price 
   //     set.
+  let currentMaxProfit = -1;
+  let buyPrice = 0;
+  let sellPrice = 0;
+
+  let changeMaxIndex = true;
+
+  for (let i = 0; i < prices.length; i++) {
+    sellPrice = prices[i + 1];
+  }
 }
