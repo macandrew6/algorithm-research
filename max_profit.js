@@ -71,7 +71,13 @@ function maxProfit(prices) {
 }
 
 /*
-[2, 7, 6, 4, 3, 1]  currentMaxProfit = 5; buyPrice = 2; sellPrice = 1; changeBuyIndex = true
+Testing: 
+
+[2, 7, 6, 4, 3, 1]  
+currentMaxProfit = 5; 
+buyPrice = 2; 
+sellPrice = 1; 
+changeBuyIndex = true
 
 */
 maxProfit([2, 7, 6, 1, 4, 3, 8]);
