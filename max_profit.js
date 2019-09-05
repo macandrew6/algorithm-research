@@ -55,7 +55,16 @@ function maxProfit(prices) {
     // cannot make a profit so we move to the next item in the list which will
     // be the new buying price
     if(sellPrice < buyPrice) {
-
+      changeBuyIndex = true;
+      continue;
+    } 
+    // if the selling price is greater than the buying price we check to see
+    // if these two indices give us a better profit then what we currently have
+    else {
+      let tempProfit = sellPrice - buyPrice;
+      if(tempProfit > currentMaxProfit) currentMaxProfit = tempProfit;
+      changeBuyIndex = false;
     }
   }
+  return currentMaxProfit;
 }
