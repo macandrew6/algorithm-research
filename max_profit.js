@@ -38,9 +38,24 @@ function maxProfit(prices) {
   let buyPrice = 0;
   let sellPrice = 0;
 
-  let changeMaxIndex = true;
+  // this allows our loop to keep iterating the buying price until a cheap 
+  // stock price is found
+  let changeBuyIndex = true;
 
+  // loop through the stock prices once
   for (let i = 0; i < prices.length; i++) {
+    // sell price is the next element in the list
     sellPrice = prices[i + 1];
+
+    // if we have not found a suitable cheap buying price yet we set the 
+    // buying price equal to the current element
+    if(changeBuyIndex) buyPrice = prices[i];
+
+    // if the selling price is less than the buying price we know that we 
+    // cannot make a profit so we move to the next item in the list which will
+    // be the new buying price
+    if(sellPrice < buyPrice) {
+
+    }
   }
 }
