@@ -34,6 +34,7 @@ function maxProfit(prices) {
   //     set this to be the new buying price and continue from step 2.
   // (5) Otherwise, continue changing only the sell_price and keep buy_price 
   //     set.
+  debugger;
   let currentMaxProfit = -1;
   let buyPrice = 0;
   let sellPrice = 0;
@@ -43,7 +44,7 @@ function maxProfit(prices) {
   let changeBuyIndex = true;
 
   // loop through the stock prices once
-  for (let i = 0; i < prices.length; i++) { // [2, 7, 6, 4, 3, 1] i = 3
+  for (let i = 0; i < prices.length; i++) { // [2, 7, 6, 4, 3, 1] i = 4
     // sell price is the next element in the list
     sellPrice = prices[i + 1];
 
@@ -61,7 +62,7 @@ function maxProfit(prices) {
     // if the selling price is greater than the buying price we check to see
     // if these two indices give us a better profit then what we currently have
     else {
-      let tempProfit = sellPrice - buyPrice; // 3 - 2 = 1
+      let tempProfit = sellPrice - buyPrice; // 1 - 2 = -1
       if(tempProfit > currentMaxProfit) currentMaxProfit = tempProfit;
       changeBuyIndex = false;
     }
@@ -70,6 +71,7 @@ function maxProfit(prices) {
 }
 
 /*
-[2, 7, 6, 4, 3, 1]  currentMaxProfit = 5; buyPrice = 2; sellPrice = 3; changeBuyIndex = false
+[2, 7, 6, 4, 3, 1]  currentMaxProfit = 5; buyPrice = 2; sellPrice = 1; changeBuyIndex = true
 
 */
+maxProfit([2, 7, 6, 1, 4, 3, 8]);
