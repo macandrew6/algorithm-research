@@ -14,19 +14,18 @@ count as extra space for the purpose of space complexity analysis.)
 */
 
 function productExceptSelf(nums) {
-  // iterate through an array
-  // init a variable products
-  // replace each current value with the products
-  // return nums
-  debugger;
-  let result = [];
-  for (let i = 0; i < nums.length; i++) {
-    let tempNums = nums.slice();
-    tempNums.splice(i, 1);
-    let products = tempNums.reduce((a, b) => a * b);
-    result.push(products);
-  }
-  return result;
+
 }
 
 productExceptSelf([1, 2, 3, 4]);
+
+/*
+let result = [];
+for (let i = 0; i < nums.length; i++) {
+  let tempNums = nums.slice();
+  tempNums.splice(i, 1);
+  let products = tempNums.reduce((a, b) => a * b);
+  result.push(products);
+}
+return result;
+*/
