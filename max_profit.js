@@ -43,7 +43,7 @@ function maxProfit(prices) {
   let changeBuyIndex = true;
 
   // loop through the stock prices once
-  for (let i = 0; i < prices.length; i++) {
+  for (let i = 0; i < prices.length; i++) { // [2, 7, 6, 4, 3, 1] i = 3
     // sell price is the next element in the list
     sellPrice = prices[i + 1];
 
@@ -61,10 +61,15 @@ function maxProfit(prices) {
     // if the selling price is greater than the buying price we check to see
     // if these two indices give us a better profit then what we currently have
     else {
-      let tempProfit = sellPrice - buyPrice;
+      let tempProfit = sellPrice - buyPrice; // 3 - 2 = 1
       if(tempProfit > currentMaxProfit) currentMaxProfit = tempProfit;
       changeBuyIndex = false;
     }
   }
   return currentMaxProfit;
 }
+
+/*
+[2, 7, 6, 4, 3, 1]  currentMaxProfit = 5; buyPrice = 2; sellPrice = 3; changeBuyIndex = false
+
+*/
