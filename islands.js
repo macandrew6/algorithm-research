@@ -55,13 +55,23 @@ function nextTo(arr2d, row, col) {
   return answer;
 }
 
+function islands(arr2d) {
+  debugger;
+  let count = 0;
+  for (let i = 0; i < arr2d.length; i++) {
+    for (let j = 0; j < arr2d[i].length; j++) {
+      if (didSinkIsland(arr2d, i, j)) {
+        count += 1;
+      }
+    }
+  }
+  return count;
+}
+
 const i = [
   [1, 1, 0, 0], 
   [1, 0, 1, 0], 
   [1, 0, 0, 1]
 ];
 
-console.log(didSinkIsland(i, 0, 0));
-console.log(i[0]);
-console.log(i[1]);
-console.log(i[2]);
+console.log(islands(i));
