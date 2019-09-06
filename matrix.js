@@ -8,25 +8,25 @@ Example 1:
 
 Input:
 [[0, 0, 0],
-[0, 1, 0],
-[0, 0, 0]]
+ [0, 1, 0],
+ [0, 0, 0]]
 
 Output:
 [[0, 0, 0],
-[0, 1, 0],
-[0, 0, 0]]
+ [0, 1, 0],
+ [0, 0, 0]]
 
 Example 2:
 
 Input:
 [[0, 0, 0],
-[0, 1, 0],
-[1, 1, 1]]
+ [0, 1, 0],
+ [1, 1, 1]]
 
 Output:
 [[0, 0, 0],
-[0, 1, 0],
-[1, 2, 1]]
+ [0, 1, 0],
+ [1, 2, 1]]
 
 
 Note:
@@ -37,5 +37,5 @@ The cells are adjacent in only four directions: up, down, left and right.
 */
 
 let updateMatrix = function(matrix) {
-
+  
 };
