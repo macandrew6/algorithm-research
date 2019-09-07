@@ -36,6 +36,21 @@ There are at least one 0 in the given matrix.
 The cells are adjacent in only four directions: up, down, left and right.
 */
 
+let checkForZero = function(matrix, x, y) {
+  let steps = 0;
+
+  return steps;
+};
+
 let updateMatrix = function(matrix) {
-  
+  // iterate through the grid
+  // find the 1's
+  // when you find the 1st 1
+  // init a variable counter
+  // we check the up down left and right coordinates
+    // if one of those coordinates is a 0
+    // counter += 1
+    // 1st 1's coordinate is equal to the counter
+    // else we check the coordinates again 1 step further
+
 };
