@@ -35,6 +35,7 @@ function didSinkIsland(arr2d, row, col) {
 }
 
 function nextTo(arr2d, row, col) {
+  console.log(answer);
   const answer = [];
   if (!(row - 1 < 0) && !(row - 1 >= arr2d.length)) {
     const up = [row - 1, col];
