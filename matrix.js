@@ -37,6 +37,11 @@ The cells are adjacent in only four directions: up, down, left and right.
 */
 
 let checkForZero = function(matrix, x, y) {
+  // returns the steps taken to the closest 0
+  // increment the step count each time we check all four sides and there are no
+  // 1's
+  // increments x and y values and decrement x and y values by 1
+  // check again
   let steps = 0;
 
   return steps;
