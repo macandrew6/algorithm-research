@@ -41,7 +41,8 @@ let checkForZero = function(matrix, x, y) {
   // increment the step count each time we check all four sides and there are no
   // 1's
   // increments x and y values and decrement x and y values by 1
-  // check again
+  // check again all values left right up and down from the coordinate 
+  // incremented by 1
   let steps = 0;
 
   return steps;
