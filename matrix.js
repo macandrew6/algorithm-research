@@ -36,7 +36,7 @@ There are at least one 0 in the given matrix.
 The cells are adjacent in only four directions: up, down, left and right.
 */
 
-let checkForZero = function(matrix, x, y) {
+let checkForZero = function(matrix, row, col) {
   // returns the steps taken to the closest 0
   // increment the step count each time we check all four sides and there are no
   // 1's
@@ -44,6 +44,9 @@ let checkForZero = function(matrix, x, y) {
   // check again all values left right up and down from the coordinate 
   // incremented by 1
   let steps = 0;
+  if (!(row - 1 < 0) && !(row - 1 >= matrix.length)) {
+    let up = [row - 1, col];
+  }
 
   return steps;
 };
