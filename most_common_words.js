@@ -37,5 +37,7 @@ Words only consist of letters, never apostrophes or other punctuation symbols.
 */
 
 function most_common_words(paragraph, banned) {
-  
+  // iterate through the paragraph
+  // search for words that appear multiple times && are not banned
+  // performance issues may arrise when operating big inputs
 }
