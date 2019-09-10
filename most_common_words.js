@@ -50,6 +50,7 @@ but instead gets: ""
 */
 
 var mostCommonWord = function (paragraph, banned) {
+  debugger;
   let mostCommon = '';
   let mostCommonCount = 0;
   let words = paragraph.split(/[ !?',;.]/).map(word => word.toLowerCase());
@@ -58,7 +59,7 @@ var mostCommonWord = function (paragraph, banned) {
     !wordCounts[words[i]] ? wordCounts[words[i]] = 1 : wordCounts[words[i]]++;
   }
 
-  let noBanns = Object.keys(wordCounts).filter(word => !banned.includes(word))
+  let noBanns = Object.keys(wordCounts).filter(word => !banned.includes(word) && word.length > 0);
 
   noBanns.forEach(word => {
     if (wordCounts[word] > mostCommonCount) {
@@ -68,3 +69,5 @@ var mostCommonWord = function (paragraph, banned) {
   });
   return mostCommon;
 };
+
+console.log(mostCommonWord("Bob. hIt, baLl", ["bob", "hit"]));
