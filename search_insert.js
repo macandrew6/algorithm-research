@@ -21,3 +21,18 @@ Example 4:
 Input: [1, 3, 5, 6], 0
 Output: 0
 */
+
+function searchInsert(nums, target) {
+  let newArr = [...nums, target].sort((a, b) => a - b);
+  console.log(newArr);
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] === target) {
+      return i;
+    }
+  }
+}
+
+let nums = [1, 2, 3, 4, 5, 10];
+let target = 2;
+
+console.log(searchInsert(nums, target));
