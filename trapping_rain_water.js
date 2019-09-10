@@ -1,3 +1,4 @@
 function trappingRainWater() {
+  //pseudo code
   
 }
