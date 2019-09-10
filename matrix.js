@@ -36,6 +36,8 @@ There are at least one 0 in the given matrix.
 The cells are adjacent in only four directions: up, down, left and right.
 */
 
+/*
+return to redo this solution
 let checkForZero = function(matrix, row, col) {
   // returns the steps taken to the closest 0
   // increment the step count each time we check all four sides and there are no
@@ -46,6 +48,15 @@ let checkForZero = function(matrix, row, col) {
   let steps = 0;
   if (!(row - 1 < 0) && !(row - 1 >= matrix.length)) {
     let up = [row - 1, col];
+  }
+  if (!(row + 1 < 0) && !(row + 1 >= matrix.length)) {
+    let down = [row + 1, col];
+  }
+  if (!(col - 1 < 0) && !(col - 1 >= matrix[0].length)) {
+    let left = [row, col - 1];
+  }
+  if (!(col + 1 < 0) && !(col + 1 >= matrix[0].length)) {
+    let right = [row, col + 1];
   }
 
   return steps;
@@ -62,4 +73,32 @@ let updateMatrix = function(matrix) {
     // 1st 1's coordinate is equal to the counter
     // else we check the coordinates again 1 step further
 
+};
+*/
+
+var updateMatrix = function (matrix) {
+  let bfs = (row, col) => {
+    let queue = [{ row, col }];
+    let step = 0;
+    while (queue.length) {
+      let len = queue.length;
+      while (len) {
+        let { row, col } = queue.shift();
+        if (row > 0) queue.push({ row: row - 1, col });
+        if (col > 0) queue.push({ row, col: col - 1 });
+        if (row < matrix.length - 1) queue.push({ row: row + 1, col });
+        if (col < matrix[0].length - 1) queue.push({ row, col: col + 1 });
+
+        if (matrix[row][col] === 0) return step;
+        len--;
+      }
+      step++;
+    }
+  }
+
+  return matrix.map((r, rIdx) => {
+    return r.map((c, cIdx) => {
+      return matrix[rIdx][cIdx] === 0 ? 0 : bfs(rIdx, cIdx);
+    })
+  })
 };

@@ -57,6 +57,7 @@ function nextTo(arr2d, row, col) {
 }
 
 function islands(arr2d) {
+  debugger;
   let count = 0;
   for (let i = 0; i < arr2d.length; i++) {
     for (let j = 0; j < arr2d[i].length; j++) {
@@ -68,10 +69,16 @@ function islands(arr2d) {
   return count;
 }
 
-const i = [
+const mat1 = [
   [1, 1, 1, 0, 1, 0, 1, 1], 
   [1, 0, 1, 0, 0, 0, 0, 1], 
   [1, 0, 0, 1, 1, 1, 0, 0]
 ];
 
-console.log(islands(i));
+const mat2 = [
+  [1, 1, 0, 0],
+  [1, 0, 1, 0],
+  [1, 0, 0, 1]
+];
+
+console.log(islands(mat2));
