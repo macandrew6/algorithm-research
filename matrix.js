@@ -94,11 +94,19 @@ var updateMatrix = function (matrix) {
       }
       step++;
     }
-  }
+  };
 
   return matrix.map((r, rIdx) => {
     return r.map((c, cIdx) => {
       return matrix[rIdx][cIdx] === 0 ? 0 : bfs(rIdx, cIdx);
-    })
-  })
+    });
+  });
 };
+
+let matrix = [
+  [0, 0, 0],
+  [0, 1, 0],
+  [0, 0, 0]
+];
+
+console.log(updateMatrix(matrix));
