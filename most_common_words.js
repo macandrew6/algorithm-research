@@ -36,8 +36,29 @@ There are no hyphens or hyphenated words.
 Words only consist of letters, never apostrophes or other punctuation symbols.
 */
 
-function most_common_words(paragraph, banned) {
-  // iterate through the paragraph
-  // search for words that appear multiple times && are not banned
-  // performance issues may arrise when operating big inputs
-}
+var mostCommonWord = function (paragraph, banned) {
+  let noPuncP = '';
+  let mostCommon = '';
+  let mostCommonCount = 0;
+  for (let i = 0; i < paragraph.length; i++) {
+    let punc = '.,!?@#$%/":;\(){}[]*-';
+    if (!punc.includes(paragraph[i])) {
+      noPuncP += paragraph[i]
+    }
+  }
+  let words = noPuncP.split(' ').map(word => word.toLowerCase());
+  let wordCounts = {};
+  for (let i = 0; i < words.length; i++) {
+    !wordCounts[words[i]] ? wordCounts[words[i]] = 1 : wordCounts[words[i]]++;
+  }
+
+  let noBanns = Object.keys(wordCounts).filter(word => !banned.includes(word))
+
+  noBanns.forEach(word => {
+    if (wordCounts[word] > mostCommonCount) {
+      mostCommonCount = wordCounts[word];
+      mostCommon = word;
+    }
+  })
+  return mostCommon;
+};
