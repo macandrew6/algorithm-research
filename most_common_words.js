@@ -36,17 +36,23 @@ There are no hyphens or hyphenated words.
 Words only consist of letters, never apostrophes or other punctuation symbols.
 */
 
+/*
+currently fails 
+
+input:
+"Bob. hIt, baLl"
+["bob", "hit"]
+
+output:
+ball
+
+but instead gets: ""
+*/
+
 var mostCommonWord = function (paragraph, banned) {
-  let noPuncP = '';
   let mostCommon = '';
   let mostCommonCount = 0;
-  for (let i = 0; i < paragraph.length; i++) {
-    let punc = '.,!?@#$%/":;\(){}[]*-';
-    if (!punc.includes(paragraph[i])) {
-      noPuncP += paragraph[i]
-    }
-  }
-  let words = noPuncP.split(' ').map(word => word.toLowerCase());
+  let words = paragraph.split(/[ !?',;.]/).map(word => word.toLowerCase());
   let wordCounts = {};
   for (let i = 0; i < words.length; i++) {
     !wordCounts[words[i]] ? wordCounts[words[i]] = 1 : wordCounts[words[i]]++;
@@ -59,6 +65,6 @@ var mostCommonWord = function (paragraph, banned) {
       mostCommonCount = wordCounts[word];
       mostCommon = word;
     }
-  })
+  });
   return mostCommon;
 };
