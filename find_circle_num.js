@@ -36,83 +36,85 @@ N is in range[1, 200].
 If M[i][j] = 1, then M[j][i] = 1.
 */
 
-// function directFriends(arr2d, row, col) {
-//   if (arr2d[row][col] === 1) {
-//     const sinkSoon = [[row, col]];
-//     while (sinkSoon.length > 0) {
-//       let currLand = sinkSoon.pop();
-//       let nextToThis = nextTo(arr2d, currLand[0], currLand[1]);
-//       if (nextToThis.every(([ntRow, ntCol]) => arr2d[ntRow][ntCol] === 0)) {
-//         continue;
-//       }
-//       nextToThis = nextToThis.filter(
-//         ([ntRow, ntCol]) => arr2d[ntRow][ntCol] === 1
-//       );
-//       nextToThis.forEach(ssSpot => {
-//         sinkSoon.push(ssSpot);
-//       });
-//       arr2d[currLand[0]][currLand[1]] = 0;
-//     }
-//     return true;
-//   }
-//   return false;
-// }
 
-// function nextTo(arr2d, row, col) {
-//   const answer = [];
-//   if (!(row - 1 < 0) && !(row - 1 >= arr2d.length)) {
-//     const up = [row - 1, col];
-//     answer.push(up);
-//   }
-//   if (!(row + 1 < 0) && !(row + 1 >= arr2d.length)) {
-//     const down = [row + 1, col];
-//     answer.push(down);
-//   }
-//   if (!(col - 1 < 0) && !(col - 1 >= arr2d[0].length)) {
-//     const left = [row, col - 1];
-//     answer.push(left);
-//   }
-//   if (!(col + 1 < 0) && !(col + 1 >= arr2d[0].length)) {
-//     const right = [row, col + 1];
-//     answer.push(right);
-//   }
-//   return answer;
-// }
+// come back to this problem
+function directFriends(arr2d, row, col) {
+  if (arr2d[row][col] === 1) {
+    const sinkSoon = [[row, col]];
+    while (sinkSoon.length > 0) {
+      let currLand = sinkSoon.pop();
+      let nextToThis = nextTo(arr2d, currLand[0], currLand[1]);
+      if (nextToThis.every(([ntRow, ntCol]) => arr2d[ntRow][ntCol] === 0)) {
+        continue;
+      }
+      nextToThis = nextToThis.filter(
+        ([ntRow, ntCol]) => arr2d[ntRow][ntCol] === 1
+      );
+      nextToThis.forEach(ssSpot => {
+        sinkSoon.push(ssSpot);
+      });
+      arr2d[currLand[0]][currLand[1]] = 0;
+    }
+    return true;
+  }
+  return false;
+}
 
-// function findCircleNum(arr2d) {
-//   let count = 0;
-//   for (let i = 0; i < arr2d.length; i++) {
-//     for (let j = 0; j < arr2d[i].length; j++) {
-//       if (directFriends(arr2d, i, j)) {
-//         count += 1;
-//       }
-//     }
-//   }
-//   return count;
-// }
+function nextTo(arr2d, row, col) {
+  const answer = [];
+  if (!(row - 1 < 0) && !(row - 1 >= arr2d.length)) {
+    const up = [row - 1, col];
+    answer.push(up);
+  }
+  if (!(row + 1 < 0) && !(row + 1 >= arr2d.length)) {
+    const down = [row + 1, col];
+    answer.push(down);
+  }
+  if (!(col - 1 < 0) && !(col - 1 >= arr2d[0].length)) {
+    const left = [row, col - 1];
+    answer.push(left);
+  }
+  if (!(col + 1 < 0) && !(col + 1 >= arr2d[0].length)) {
+    const right = [row, col + 1];
+    answer.push(right);
+  }
+  return answer;
+}
 
-
-var findCircleNum = function (M) {
-  debugger;
-  let visited = new Array(M.length).fill(false), cnt = 0;
-  for (let i = 0; i < M.length; i++) {
-    if (visited[i] === false) {
-      visited[i] = true;
-      helper(M, visited, i);
-      cnt++;
+function findCircleNum(arr2d) {
+  let count = 0;
+  for (let i = 0; i < arr2d.length; i++) {
+    for (let j = 0; j < arr2d[i].length; j++) {
+      if (directFriends(arr2d, i, j)) {
+        count += 1;
+      }
     }
   }
-  return cnt;
-};
+  return count;
+}
 
-const helper = function (mat, visited, i) {
-  for (let j = 0; j < mat.length; j++) {
-    if (mat[i][j] === 1 && visited[j] === false) {
-      visited[j] = true;
-      helper(mat, visited, j);
-    }
-  }
-};
+
+// var findCircleNum = function (M) {
+//   debugger;
+//   let visited = new Array(M.length).fill(false), cnt = 0;
+//   for (let i = 0; i < M.length; i++) {
+//     if (visited[i] === false) {
+//       visited[i] = true;
+//       helper(M, visited, i);
+//       cnt++;
+//     }
+//   }
+//   return cnt;
+// };
+
+// const helper = function (mat, visited, i) {
+//   for (let j = 0; j < mat.length; j++) {
+//     if (mat[i][j] === 1 && visited[j] === false) {
+//       visited[j] = true;
+//       helper(mat, visited, j);
+//     }
+//   }
+// };
 
 let matrix = [
   [1, 0, 0, 1], 

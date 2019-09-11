@@ -54,4 +54,16 @@ Explanation: You started from the point(0, 0) and you can cut off the tree in
 (0, 0) directly without walking.
 
 Hint: size of the given matrix will not exceed 50x50.
-  */
+*/
+
+function cutOffTreesForGolfEvents(matrix) {
+
+}
+
+let matrix = [
+  [1, 2, 3],
+  [0, 0, 4],
+  [7, 6, 5]
+];
+
+console.log(cutOffTreesForGolfEvents(matrix));

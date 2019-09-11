@@ -49,6 +49,7 @@ ball
 but instead gets: ""
 */
 
+// find optimal solution
 var mostCommonWord = function (paragraph, banned) {
   debugger;
   let mostCommon = '';
