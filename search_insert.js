@@ -35,7 +35,6 @@ Output: 0
 
 function searchInsert(nums, target) {
   let start = 0, mid = 0, end = nums.length - 1;
-  debugger;
   while (start <= end) {
     mid = Math.floor((start + end) / 2);
     if (nums[mid] < target) {
@@ -45,10 +44,10 @@ function searchInsert(nums, target) {
     }
   }
 
-  return nums.length && start;
+  return start;
 }
 
 let nums = [1, 2, 3, 4, 5, 10];
-let target = 7;
+let target = 15;
 
 console.log(searchInsert(nums, target));
