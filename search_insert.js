@@ -23,17 +23,32 @@ Output: 0
 */
 
 // sub optimal solution
+// function searchInsert(nums, target) {
+//   let newArr = [...nums, target].sort((a, b) => a - b);
+//   console.log(newArr);
+//   for (let i = 0; i < newArr.length; i++) {
+//     if (newArr[i] === target) {
+//       return i;
+//     }
+//   }
+// }
+
 function searchInsert(nums, target) {
-  let newArr = [...nums, target].sort((a, b) => a - b);
-  console.log(newArr);
-  for (let i = 0; i < newArr.length; i++) {
-    if (newArr[i] === target) {
-      return i;
+  let start = 0, mid = 0, end = nums.length - 1;
+  debugger;
+  while (start <= end) {
+    mid = Math.floor((start + end) / 2);
+    if (nums[mid] < target) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
     }
   }
+
+  return nums.length && start;
 }
 
 let nums = [1, 2, 3, 4, 5, 10];
-let target = 2;
+let target = 7;
 
 console.log(searchInsert(nums, target));
