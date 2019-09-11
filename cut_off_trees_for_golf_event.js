@@ -56,14 +56,14 @@ Explanation: You started from the point(0, 0) and you can cut off the tree in
 Hint: size of the given matrix will not exceed 50x50.
 */
 
-function cutOffTreesForGolfEvents(matrix) {
+function cutOffTree(forest) {
 
 }
 
-let matrix = [
+let forest = [
   [1, 2, 3],
   [0, 0, 4],
   [7, 6, 5]
 ];
 
-console.log(cutOffTreesForGolfEvents(matrix));
+console.log(cutOffTree(forest));
