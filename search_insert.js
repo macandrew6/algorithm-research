@@ -22,6 +22,7 @@ Input: [1, 3, 5, 6], 0
 Output: 0
 */
 
+// sub optimal solution
 function searchInsert(nums, target) {
   let newArr = [...nums, target].sort((a, b) => a - b);
   console.log(newArr);

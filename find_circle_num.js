@@ -94,31 +94,37 @@ If M[i][j] = 1, then M[j][i] = 1.
 
 var findCircleNum = function (M) {
   debugger;
-  let visited = new Array(M.length).fill(false), cnt = 0
+  let visited = new Array(M.length).fill(false), cnt = 0;
   for (let i = 0; i < M.length; i++) {
-    if (visited[i] == false) {
-      visited[i] = true
-      helper(M, visited, i)
-      cnt++
+    if (visited[i] === false) {
+      visited[i] = true;
+      helper(M, visited, i);
+      cnt++;
     }
   }
-  return cnt
+  return cnt;
 };
 
 const helper = function (mat, visited, i) {
   for (let j = 0; j < mat.length; j++) {
-    if (mat[i][j] == 1 && visited[j] == false) {
-      visited[j] = true
-      helper(mat, visited, j)
+    if (mat[i][j] === 1 && visited[j] === false) {
+      visited[j] = true;
+      helper(mat, visited, j);
     }
   }
-}
+};
 
 let matrix = [
   [1, 0, 0, 1], 
   [0, 1, 1, 0], 
   [0, 1, 1, 1], 
   [1, 0, 1, 1]
+];
+
+let matrix2 = [
+  [1, 1, 0],
+  [1, 1, 0],
+  [0, 0, 1]
 ];
 
 console.log(findCircleNum(matrix));
