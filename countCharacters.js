@@ -36,13 +36,16 @@ function countCharacters(words, chars) {
   // init a count
   let count = 0;
   // iterate through the words array
-
+  for (let i = 0; i < words.length; i++) {
     // init tempChars (temporary characters)
     // for each word in the array
-      // for each letter in tempChars thats included in each word
-      // increment count
-      // make letter = '';
+    // for each letter in tempChars thats included in each word
+        // increment count
+        // make letter = '';
+    }
+  }
   // returns count
+  return count;
 }
 
 let words = ["cat", "bt", "hat", "tree"], chars = "atach";
