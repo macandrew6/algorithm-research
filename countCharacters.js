@@ -31,7 +31,18 @@ All strings contain lowercase English letters only.
 */
 
 function countCharacters(words, chars) {
+  // turn chars into an array
+  let charsArr = chars.split('');
+  // init a count
+  let count = 0;
+  // iterate through the words array
 
+    // init tempChars (temporary characters)
+    // for each word in the array
+      // for each letter in tempChars thats included in each word
+      // increment count
+      // make letter = '';
+  // returns count
 }
 
 let words = ["cat", "bt", "hat", "tree"], chars = "atach";
