@@ -31,23 +31,23 @@ All strings contain lowercase English letters only.
 */
 
 function countCharacters(words, chars) {
-  // turn chars into an array
-  let charsArr = chars.split('');
-  // init a count
-  let count = 0;
+  // set up a res variable
   // iterate through the words array
-  for (let i = 0; i < words.length; i++) {
-    // init tempChars (temporary characters)
-    // for each word in the array
-    // for each letter in tempChars thats included in each word
-        // increment count
-        // make letter = '';
-    }
-  }
-  // returns count
-  return count;
+    // init Match flag default true
+    // init tempChars
+    // iterate through the word array
+      // init letter variable
+      // index = init temp character index of current letter
+      // if (flag > -1)
+        // tempChars = tempChars.substring(-1, index) + tempChars.substring(index + 1)
+      // else 
+        // change Match flag to false
+        // break out of for loop
+    // match flag is true
+      // res += word.length
+  // return res
 }
 
-let words = ["cat", "bt", "hat", "tree"], chars = "atach";
+let words = ["hello", "world", "leetcode"], chars = "welldonehoneyr";
 
 console.log(countCharacters(words, chars));
