@@ -49,11 +49,13 @@ Constraints:
 */
 
 function numRollsToTarget(d, f, target) {
-
+  
 }
 
-let d = 1;
-let f = 6;
+let d = 1; // # of dice
+let f = 6; // # of faces on the die
 let target = 3;
+
+// output: returns the probability of the dice summing to the taget
 
 console.log(numRollsToTarget(d, f, target));
