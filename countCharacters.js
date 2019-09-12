@@ -32,19 +32,36 @@ All strings contain lowercase English letters only.
 
 function countCharacters(words, chars) {
   // set up a res variable
+  let res = 0;
   // iterate through the words array
+  words.forEach(word => {
     // init Match flag default true
+    let isMatch = true;
     // init tempChars
+    let tempChars = chars;
     // iterate through the word array
+    for (let i = 0; i < word.length; i++) {
       // init letter variable
+      let letter = word[i];
       // index = init temp character index of current letter
+      let charIndex = tempChars.indexOf(letter) ;
       // if (flag > -1)
-        // tempChars = tempChars.substring(-1, index) + tempChars.substring(index + 1)
-      // else 
-        // change Match flag to false
-        // break out of for loop
-    // match flag is true
+      if (charIndex > -1) {
+        tempChars = tempChars.slice(0, charIndex) + 
+        tempChars.slice(charIndex + 1);
+        console.log(tempChars);
+      } else {
+        isMatch = false;
+        break;
+      }
+      // match flag is true
+    }
+    if (isMatch) {
       // res += word.length
+      res += word.length;
+    }
+  });
+  return res;
   // return res
 }
 
