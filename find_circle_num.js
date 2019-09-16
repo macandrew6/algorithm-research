@@ -49,9 +49,77 @@ If M[i][j] = 1, then M[j][i] = 1.
     C[0,0,1,0],
     D[0,0,0,1]
   */
-const findCircleNum = function (M) {
+function circleCount(M) {
+  console.log("input:");
+  M.forEach(row => {
+    console.log(row);
+  });
+  const seen = new Set();
+  let groupCount = 0;
+  for (let i = 0; i < M.length; i++) {
+    const row = M[i];
+    for (let j = 0; j < row.length; j++) {
+      const isFriend = row[j] === 1;
+      if (isFriend && !seen.has(i)) {
+        groupCount++;
+        bfs(M, i, seen);
+        break;
+      }
+    }
+  }
+  console.log("after:");
+  M.forEach(row => {
+    console.log(row);
+  });
+  return groupCount;
+}
 
-};
+function bfs(M, i, seen) {
+  const queue = [i];
+  while (queue.length) {
+    const rowIdx = queue.shift();
+    seen.add(rowIdx);
+    for (let j = 0; j < M[rowIdx].length; j++) {
+      const isFriend = M[rowIdx][j] === 1;
+      if (rowIdx !== j && isFriend && !seen.has(j)) {
+        M[rowIdx][j] = 0;
+        M[j][rowIdx] = 0;
+        queue.push(j);
+      }
+    }
+  }
+}
+
+const e1 = [
+  [1, 1, 0, 0, 0, 0], //
+  [1, 1, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0, 1],
+  [0, 0, 0, 1, 1, 0],
+  [0, 0, 0, 1, 1, 0],
+  [0, 0, 1, 0, 0, 1]
+];
+
+const e2 = [
+  [1, 1, 0], //
+  [1, 1, 0],
+  [0, 0, 1]
+];
+
+const e3 = [
+  [1, 0, 0, 0, 0, 0], //
+  [0, 1, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0, 0],
+  [0, 0, 0, 1, 0, 0],
+  [0, 0, 0, 0, 1, 0],
+  [0, 0, 0, 0, 0, 1]
+];
+
+console.log(`\n---e1:---`);
+console.log(circleCount(e1));
+console.log(`\n---e2:---`);
+console.log(circleCount(e2));
+console.log(`\n---e3:---`);
+console.log(circleCount(e3));
 
 
 // var findCircleNum = function (M) {
