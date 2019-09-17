@@ -39,9 +39,3 @@ let collision = asteroids => {
 };
 
 console.log(collision([]));
-// asteroidCollision([1, 2, -3]);
-// let arr = [1, 2, 3]
-// arr.pop()
-// arr.pop()
-// arr.pop();
-// console.log(arr)
