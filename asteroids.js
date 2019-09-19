@@ -4,6 +4,27 @@
 [1, 2, -3] => [-3]
 */
 
+/*
+pseudo code:
+
+loop the array from left to right, keep valid elements in the stack
+if the stack is empty push the element into the stack
+4 cases with top of stack and curr element:
+  * top of stack positive and curr element positive > push to stack
+  * top of stack negative and curr element negative > push to stack
+  * top of stack negative and curr element positive > push to stack
+  * top of stack positive and curr element negative => most tricky
+    * case 4 has 3 small cases:
+      * if |curr| === top of stack => destroy both, pop top of stack and move on
+                                      the next element
+      * if |curr| < top of stack   => destroy curr, skip current and move to the
+                                      next element   
+      * if |curr| > top of stack   => destroy top of stack, and still need to 
+                                      compare the curr with the next top of the 
+                                      stack, (do not increase the array index)
+
+*/
+
 var asteroidCollision = function(asteroids) {
   let collided = collision(asteroids);
 

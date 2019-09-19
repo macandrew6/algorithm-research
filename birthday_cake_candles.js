@@ -30,6 +30,7 @@ Sample Output:
 */
 
 function birthdayCakeCandles(arr) {
+  debugger;
   let tallestCandleCount = 0;
   let max = Math.max(...arr);
   for (let i = 0; i < arr.length; i++) {
