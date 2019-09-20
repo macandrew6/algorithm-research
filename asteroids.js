@@ -33,8 +33,22 @@ let asteroidCollision = function(asteroids) {
     if (!stack.length) stack.push(asteroids[i]);
     if (Math.sign(top) === 1 && Math.sign(curr) === 1) {
       stack.push(curr);
-    } (Math.sign(top) === -1 && Math.sign(curr) === -1) {
+    } else if (Math.sign(top) === -1 && Math.sign(curr) === -1) {
       stack.push(curr);
+    } else if (Math.sign(top) === -1 && Math.sign(curr) === 1) {
+      stack.push(curr);
+    } else {
+      if (Math.abs(curr) === top) {
+        stack.pop();
+        continue;
+      } else if (Math.abs(curr) < top) {
+        continue;
+      } else if (Math.abs(curr) > top) {
+        // if |curr| > top of stack   => destroy top of stack, and still need to 
+        //                               compare the curr with the next top of the 
+        //                               stack, (do not increase the array index)
+        
+      }
     }
   }
 };
