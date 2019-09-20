@@ -28,9 +28,13 @@ let asteroidCollision = function(asteroids) {
   // new implementation
   let stack = [];
   for (let i = 0; i < asteroids.length; i++) {
+    let top = stack[stack.length - 1];
+    let curr = asteroids[i];
     if (!stack.length) stack.push(asteroids[i]);
-    if (Math.sign(stack[stack.length - 1]) === 1 && Math.sign(asteroids[i]) === 1) {
-      stack.push(asteroids[i]);
+    if (Math.sign(top) === 1 && Math.sign(curr) === 1) {
+      stack.push(curr);
+    } (Math.sign(top) === -1 && Math.sign(curr) === -1) {
+      stack.push(curr);
     }
   }
 };
