@@ -13,3 +13,6 @@ Output:
 ]
 */
 
+function generateMatrix(n) {
+  
+}
