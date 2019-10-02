@@ -40,23 +40,3 @@ function productExceptSelf(nums) {
 }
 
 productExceptSelf([1, 2, 3, 4]);
-
-/* 
-nums = [1, 2, 3, 4]
-len = 4
-leftProduct = [1, 1, 2, 6]
-result = [24, 12, 8, 6]
-rightProduce = 24
-
-*/
-
-/*
-let result = [];
-for (let i = 0; i < nums.length; i++) {
-  let tempNums = nums.slice();
-  tempNums.splice(i, 1);
-  let products = tempNums.reduce((a, b) => a * b);
-  result.push(products);
-}
-return result;
-*/
