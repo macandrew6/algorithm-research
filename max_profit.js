@@ -32,8 +32,6 @@ function maxProfit(arr) {
     if (arr[p2] < arr[p1]) p1 = i;
     if (arr[i] > arr[p2]) p2 = i;
   }
-  console.log("p1 => ", p1);
-  console.log("p2 => ", p2);
   for (let j = p1; j < p2; j++) {
     if (arr[j] < arr[p1]) p1 = arr[j];
   }
