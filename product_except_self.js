@@ -39,4 +39,25 @@ function productExceptSelf(nums) {
   return result;
 }
 
+const productExceptSelf2 = (arr) => {
+  let result = [];
+  let product = arr.reduce((a, b) => a * b);
+  let zeroException = 1;
+  // iterate through the array
+  for (let i = 0; i < arr.length; i++) {
+    // arr[i] = 2, i = 0
+    if (arr[i] === 0) {
+      for (let j = 0; j < arr.length; j++) {
+        if (i !== j) {
+          zeroException *= arr[j]
+        }
+      }
+      result.push(zeroException);
+    } else {
+      result.push(product / arr[i]);
+    }
+  }
+  return result;
+};
+
 productExceptSelf([1, 2, 3, 4]);
