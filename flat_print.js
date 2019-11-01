@@ -24,6 +24,7 @@ const flatPrint2 = (arr) => {
   while (flag) {
     if (arr[counter1].length !== 0) {
       console.log(arr[counter1].shift());
+      counter2 = 0;
     } else if (arr[counter1].length === 0) {
       counter2++;
     }
