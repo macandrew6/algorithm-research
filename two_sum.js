@@ -24,3 +24,10 @@ var twoSum = function (nums, target) {
     }
   }
 };
+
+// O(n) time O(n) space solution
+
+var twoSum2 = function(nums, target) {
+  let hash = {};
+  
+}
