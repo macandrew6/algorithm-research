@@ -28,14 +28,16 @@ var twoSum = function (nums, target) {
 // O(n) time O(n) space solution
 
 var twoSum2 = function(nums, target) {
-  let hash = {};
+  let hash = new Map();
   for (let i = 0; i < nums.length; i++) {
     hash[i] = nums[i];
   }
 
-  for (let key in hash) {
-    let compliment = target - hash[key];
-    if (hash.has(compliment) )
+  for (let i = 0; i < nums.length; i++) {
+    let compliment = target - nums[i];
+    if (hash.has(compliment)) {
+      return [i];
+    }
   }
   console.log(hash);
 }
