@@ -29,5 +29,14 @@ var twoSum = function (nums, target) {
 
 var twoSum2 = function(nums, target) {
   let hash = {};
-  
+  for (let i = 0; i < nums.length; i++) {
+    hash[i] = nums[i];
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    let compliment = target - nums[i];
+  }
+  console.log(hash);
 }
+
+twoSum2([1, 2, 3, 4], 5);
