@@ -33,8 +33,9 @@ var twoSum2 = function(nums, target) {
     hash[i] = nums[i];
   }
 
-  for (let i = 0; i < nums.length; i++) {
-    let compliment = target - nums[i];
+  for (let key in hash) {
+    let compliment = target - hash[key];
+    if (hash.has(compliment) )
   }
   console.log(hash);
 }
