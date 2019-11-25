@@ -35,7 +35,7 @@ var twoSum2 = function(nums, target) {
 
   for (let i = 0; i < nums.length; i++) {
     let compliment = target - nums[i];
-    if (hash.has(compliment)) {
+    if (hash.has(compliment)) { // somehow obtain key from map
       return [i];
     }
   }
