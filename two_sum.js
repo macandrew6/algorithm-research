@@ -29,17 +29,40 @@ var twoSum = function (nums, target) {
 
 var twoSum2 = function(nums, target) {
   let hash = new Map();
+  let result = [];
+
   for (let i = 0; i < nums.length; i++) {
-    hash[i] = nums[i];
+    hash.set(i, nums[i]);
   }
 
   for (let i = 0; i < nums.length; i++) {
     let compliment = target - nums[i];
+    // console.log(compliment);
     if (hash.has(compliment)) { // somehow obtain key from map
-      return [i, hash.get(i)];
+      result[0] = i;
+      result[1] = hash.get(i);
+      return result;
     }
   }
-  // console.log(hash);
-}
+  return result;
+    // let numberIndex = new Map();
+    // let result = [];
 
-twoSum2([1, 2, 3, 4], 5);
+    // for (let i = 0; i < nums.length; i++) {
+    //   let num = nums[i];
+    //   let complement = target - num;
+
+    //   if (numberIndex.has(complement)) {
+    //     result[0] = numberIndex.get(complement);
+    //     result[1] = i;
+
+    //     return result;
+    //   }
+
+    //   numberIndex.set(num, i);
+    // }
+
+    // return result;
+};
+
+console.log(twoSum2([1, 2, 3, 4], 5));
