@@ -36,10 +36,10 @@ var twoSum2 = function(nums, target) {
   for (let i = 0; i < nums.length; i++) {
     let compliment = target - nums[i];
     if (hash.has(compliment)) { // somehow obtain key from map
-      return [i];
+      return [i, hash.get(i)];
     }
   }
-  console.log(hash);
+  // console.log(hash);
 }
 
 twoSum2([1, 2, 3, 4], 5);
