@@ -49,7 +49,7 @@ const productExceptSelf2 = (arr) => {
     if (arr[i] === 0) {
       for (let j = 0; j < arr.length; j++) {
         if (i !== j) {
-          zeroException *= arr[j]
+          zeroException *= arr[j];
         }
       }
       result.push(zeroException);
