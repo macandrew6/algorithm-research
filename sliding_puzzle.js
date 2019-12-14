@@ -32,3 +32,14 @@ After move 5: [[1,2,3],[4,5,0]]
 Input: board = [[3,2,4],[1,5,0]]
 Output: 14
 */
+
+let slidingPuzzle = (board) => {
+
+};
+
+let board = [
+  [1,2,3],
+  [4,0,5]
+];
+
+console.log(slidingPuzzle(board));
