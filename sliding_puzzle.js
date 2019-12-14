@@ -34,6 +34,11 @@ Output: 14
 */
 
 let slidingPuzzle = (board) => {
+  // created a queue
+  let queue = [];
+  // check if the board is solved
+  // check the next move
+  // check check if you've seen the previous move before
 
 };
 
